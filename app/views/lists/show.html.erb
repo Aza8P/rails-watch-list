@@ -2,12 +2,14 @@
  <h2> List of movies in <%= @list.name %></h2>
 </div>
 
+<% @list.movies.each do |movie| %>
+  <div class="card">
+    <h3><%= movie.title %></h3>
+    <p><%= movie.overview %></p>
+  </div>
+<% end %>
 
-<%# <% @list.movies.each do |movie| %>
-  <%# <% class="card-title"><%= movie.title %>
-  <%# <% <p class="card-text"><%= movie.overview %>
-<%# <% end %>
 
-<%= link_to "Add a movie", new_list_bookmark_path(@list)  %>
+<%= link_to "Add a movie", new_list_bookmark_path(@list) %>
 
 <%= link_to "Back to lists", lists_path %>

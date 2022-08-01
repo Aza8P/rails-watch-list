@@ -2,3 +2,17 @@
 import "@hotwired/turbo-rails"
 // import "controllers"
 import "bootstrap";
+
+import { initTomSelect } from './plugins/init-tom-select';
+
+document.addEventListener('turbo:load', () => {
+  initTomSelect();
+})
+
+
+import { initNavbar } from 'components/navbar'
+
+document.addEventListener("turbo:load", () => {
+  // Call your JS functions here
+  initNavbar();
+})

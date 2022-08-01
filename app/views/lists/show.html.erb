@@ -1,24 +1,13 @@
 <div class="banner">
-  <h1><%= @list.name %></h1>
+ <h2> List of movies in <%= @list.name %></h2>
 </div>
 
-    <%# <div class="card mb-3">
-    <% @list.movies.each do |movie| %>
-      <%# <img src='<%= movie.poster_url%>
-      <%# <div class="card-body"> %>
-        <%# <h5 class="card-title"><%= movie.title %>
-        <%# <p class="card-text"><%= movie.overview %>
-      <%# </div> %>
-    <%# <% end %>
-    <%# </div> %>
 
-<div class="card bg-dark text-white">
-  <img class="card-img" src="..." alt="Card image">
-  <div class="card-img-overlay">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text">Last updated 3 mins ago</p>
-  </div>
-</div>
+<%# <% @list.movies.each do |movie| %>
+  <%# <% class="card-title"><%= movie.title %>
+  <%# <% <p class="card-text"><%= movie.overview %>
+<%# <% end %>
+
+<%= link_to "Add a movie", new_list_bookmark_path(@list_id)  %>
 
 <%= link_to "Back to lists", lists_path %>

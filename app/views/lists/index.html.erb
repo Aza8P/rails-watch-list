@@ -1,0 +1,21 @@
+<div class="home-banner">
+<h1>Movie Lists</h1>
+</div>
+
+<div class=" container d-flex">
+  <h4>My Lists</h4>
+  <%= link_to "create list", new_list_path %>
+</div>
+
+<div class="row">
+  <% @lists.each do |list|  %>
+  <div class="col-sm-6">
+      <div class="card text-bg-dark">
+        <img src="https://unsplash.com/photos/CiUR8zISX60" alt="">
+        <div class="card-img-overlay">
+          <h5 class="card-title"><%= list.name  %></h5>
+        </div>
+      </div>
+  </div>
+  <% end %>
+</div>

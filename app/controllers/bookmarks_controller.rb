@@ -8,18 +8,14 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(bookmark_params)
     @list = List.find(params[:list_id])
     @bookmark.list = @list
-    if @bookmark.save
-      redirect_to list_path(@list)
-    else
-      render 'new'
-    end
-    # redirect_to lists_path(@list)
+    flash[:notice] = @bookmark.errors.full_messages.to_sentence unless @bookmark.save
+    redirect_to list_path(@list)
   end
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
-    redirect_to lists_path(@list), status: :see_other
+    redirect_to list_path(@bookmark.list), status: :see_other
   end
 
   private

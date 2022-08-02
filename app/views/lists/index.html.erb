@@ -1,17 +1,20 @@
+<div id="navbar" class="navbar navbar-expand-sm navbar-light navbar-movie fixed-top position-relative" :class="navbarClass">
+  <%= button_to "Create List", new_list_path %>
+</div>
+
 <div class="home-banner">
   <h1>Movie Lists</h1>
 </div>
 
 <div class="container d-flex">
-  <h4>My Lists</h4>
-  <%= link_to "create list", new_list_path %>
+  <h4 class="p-2 flex-grow-1">Recommended</h4>
+  <button type="button" class="btn btn-primary btn-lg p-1"><%= link_to 'Create List', new_list_path %></button>
 </div>
-
 
 <div class="container">
   <% @lists.each do |list|  %>
-  <div class="card mb-3">
-    <img src="..." class="card-img-top" alt="...">
+  <div class="card mb-3 shadow p-3 mb-5 bg-white rounded" style="card-box-shadow: ">
+    <img class="card-img-top" alt="">
     <%= link_to list_path(list) do  %>
     <div class="card-body">
       <h5 class="card-title"><%= list.name  %></h5>
